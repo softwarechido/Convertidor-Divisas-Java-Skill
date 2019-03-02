@@ -19,9 +19,8 @@ public class ConvertidorWebService {
 
     public static Double convertir(String origen, String destino, Double monto) {
 
-        Double result = null;
-        URLCaller myURLCaller = new URLCaller();
-        String contenido = myURLCaller.callURL("https://api.exchangeratesapi.io/latest?base=" + origen);
+        Double result;
+        String contenido = URLCaller.callURL("https://api.exchangeratesapi.io/latest?base=" + origen);
 
         System.out.println(contenido);
 
@@ -34,7 +33,7 @@ public class ConvertidorWebService {
                 Double tipoDeCambio = (Double) rates.get(destino);
                 if (null == tipoDeCambio)
                     return null;
-                
+
                 result = monto * tipoDeCambio;
             }
 
