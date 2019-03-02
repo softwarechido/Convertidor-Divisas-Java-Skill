@@ -20,10 +20,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class JSONParser {
-
-
     public static  Map<String,Object> parseJson(String json) throws IOException, ScriptException {
-
         ScriptEngineManager sem = new ScriptEngineManager();
         ScriptEngine engine = sem.getEngineByName("javascript");
         String script = "Java.asJSONCompatible(" + json + ")";
@@ -31,6 +28,5 @@ public class JSONParser {
         Map<String,Object> contents = (Map<String,Object>) result;
 
         return contents;
-        
     }
 }

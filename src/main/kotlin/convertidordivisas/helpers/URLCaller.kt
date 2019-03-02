@@ -17,12 +17,16 @@ package convertidordivisas.helpers
 import convertidordivisas.extension.asUrl
 import convertidordivisas.extension.fetchData
 
-fun callURL(urlString: String): String =
-        buildString {
-            urlString.asUrl().fetchData {
-                it.lineSequence().forEach { line ->
-                    append(line)
-                    append("\n")
-                }
-            }
+/**
+ * Take an string and fetch the data. Return the data separated by line.
+ *
+ * @param urlString the string that represents a [URL]
+ */
+fun callURL(urlString: String): String = buildString {
+    urlString.asUrl().fetchData {
+        it.lineSequence().forEach { line ->
+            append(line)
+            append("\n")
         }
+    }
+}
