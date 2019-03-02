@@ -19,8 +19,6 @@ public class Driver {
 
     // @Test
     public static void main(String[] args) {
-
-        
         System.out.println("Convirtiendo EUR a USD 100");
         Double resultado = ConvertidorWebService.convertir("EUR", "USD", 100d);
         String respuesta = String.format("%.2f",resultado);
