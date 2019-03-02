@@ -20,22 +20,21 @@ import java.net.URL
 object URLCaller {
     @JvmStatic
     fun callURL(urlAsString: String): String {
-        val content = StringBuilder()
-        try {
-            val url = URL(urlAsString)
-            val urlConnection = url.openConnection()
+        return buildString {
+            try {
+                val url = URL(urlAsString)
+                val urlConnection = url.openConnection()
 
-            val input = BufferedReader(InputStreamReader(urlConnection.getInputStream()))
+                val input = BufferedReader(InputStreamReader(urlConnection.getInputStream()))
 
-            var line: String? = input.readLine()
-            while (line != null) {
-                content.append(line).append("\n")
-                line = input.readLine()
+                var line: String? = input.readLine()
+                while (line != null) {
+                    append(line).append("\n")
+                    line = input.readLine()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-        } catch (e: Exception) {
-            e.printStackTrace()
         }
-
-        return content.toString()
     }
 }
