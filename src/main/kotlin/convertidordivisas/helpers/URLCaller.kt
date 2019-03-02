@@ -13,28 +13,18 @@
 
 package convertidordivisas.helpers
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.URL
+import convertidordivisas.extension.StringURLConverter
+import convertidordivisas.extension.fetchData
 
-object URLCaller {
+object URLCaller : StringURLConverter {
     @JvmStatic
-    fun callURL(urlAsString: String): String {
-        return buildString {
-            try {
-                val url = URL(urlAsString)
-                val urlConnection = url.openConnection()
-
-                val input = BufferedReader(InputStreamReader(urlConnection.getInputStream()))
-
-                var line: String? = input.readLine()
-                while (line != null) {
-                    append(line).append("\n")
-                    line = input.readLine()
+    fun callURL(urlString: String): String =
+            buildString {
+                urlString.asUrl().fetchData {
+                    it.lineSequence().forEach { line ->
+                        append(line)
+                        append("\n")
+                    }
                 }
-            } catch (e: Exception) {
-                e.printStackTrace()
             }
-        }
-    }
 }

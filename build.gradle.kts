@@ -36,6 +36,13 @@ dependencies {
     implementation(kotlin("stdlib-jdk8", "1.3.21"))
 
     implementation("com.amazon.alexa:ask-sdk:2.11.2")
+
+    val junitJupiterVersion = "5.2.0"
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testImplementation("org.junit.platform:junit-platform-runner:1.2.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
 /**
