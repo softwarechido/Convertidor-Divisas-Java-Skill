@@ -1,0 +1,127 @@
+{
+	"version": "1.0",
+	"session": {
+		"new": false,
+		"sessionId": "amzn1.echo-api.session.aa0d24d3-e5fd-4944-b2c7-d52facbf9573",
+		"application": {
+			"applicationId": "amzn1.ask.skill.edda3fbe-9d45-4aa0-a82b-234c51b61ae5"
+		},
+		"user": {
+			"userId": "amzn1.ask.account.AERPTV6RY34S74BM332N6XSSG3TYYNW3VA6FIN6IWL4YIHZ2ZJNB6WSUQDCK37IHHZ3NKCO4DSY47NUSIEXCY2WZ6TIRI6J52BPAKVC53ZD7NB6WOLSNLVMQYO24KNXTHXOHGRX42GNNNTKLCEHX6TPLL5RYEJDJD7QHVDQYOM3E7Q7Y7CAA4AGWCH4MQX2WPEXUE5UK7SAJTRA"
+		}
+	},
+	"context": {
+		"System": {
+			"application": {
+				"applicationId": "amzn1.ask.skill.edda3fbe-9d45-4aa0-a82b-234c51b61ae5"
+			},
+			"user": {
+				"userId": "amzn1.ask.account.AERPTV6RY34S74BM332N6XSSG3TYYNW3VA6FIN6IWL4YIHZ2ZJNB6WSUQDCK37IHHZ3NKCO4DSY47NUSIEXCY2WZ6TIRI6J52BPAKVC53ZD7NB6WOLSNLVMQYO24KNXTHXOHGRX42GNNNTKLCEHX6TPLL5RYEJDJD7QHVDQYOM3E7Q7Y7CAA4AGWCH4MQX2WPEXUE5UK7SAJTRA"
+			},
+			"device": {
+				"deviceId": "amzn1.ask.device.AFVM6W3JZLK747XY4JT25IGKDEWZSQ6TCHH5AJTB5DJBDZ6O2SFW2PILBRFTSQ2KKSEIXII4WK4362BHXH73D6UYDB6IHRJISYP5GVKGQP6FUNKJ6BRSQBSEJGK2JQXCCGBO3E6CNB4BXCAHSAHAOUXRSKGVXYULNPRF467XEZJCFCJMRNX5M",
+				"supportedInterfaces": {}
+			},
+			"apiEndpoint": "https://api.amazonalexa.com",
+			"apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLmVkZGEzZmJlLTlkNDUtNGFhMC1hODJiLTIzNGM1MWI2MWFlNSIsImV4cCI6MTU1MTQ5MTYwOCwiaWF0IjoxNTUxNDkxMzA4LCJuYmYiOjE1NTE0OTEzMDgsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUZWTTZXM0paTEs3NDdYWTRKVDI1SUdLREVXWlNRNlRDSEg1QUpUQjVESkJEWjZPMlNGVzJQSUxCUkZUU1EyS0tTRUlYSUk0V0s0MzYyQkhYSDczRDZVWURCNklIUkpJU1lQNUdWS0dRUDZGVU5LSjZCUlNRQlNFSkdLMkpRWENDR0JPM0U2Q05CNEJYQ0FIU0FIQU9VWFJTS0dWWFlVTE5QUkY0NjdYRVpKQ0ZDSk1STlg1TSIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFFUlBUVjZSWTM0Uzc0Qk0zMzJONlhTU0czVFlZTlczVkE2RklONklXTDRZSUhaMlpKTkI2V1NVUURDSzM3SUhIWjNOS0NPNERTWTQ3TlVTSUVYQ1kyV1o2VElSSTZKNTJCUEFLVkM1M1pEN05CNldPTFNOTFZNUVlPMjRLTlhUSFhPSEdSWDQyR05OTlRLTENFSFg2VFBMTDVSWUVKREpEN1FIVkRRWU9NM0U3UTdZN0NBQTRBR1dDSDRNUVgyV1BFWFVFNVVLN1NBSlRSQSJ9fQ.Tb1DXlZ88hz-KTRnE9N5GqYcd6rSAVXhjt4bsjiVpDnoQLNe5F3EnoCWewWe4keSMYYMtsE3i_9cg7iuPHwAus7tF3qRhu0AymgpkzPhlc0-cO7JYa6MsZcmdOcktZgaGR6g3m1VSZ8fQG4bji4baYTLPYrQebH517cgJmPsBinJ1ps5Ch17gGQYsyPE5TR8KoknJrguDp945_wX4I34l3842sb_ozit7npqqch7Lj32mrPmwFEOGIS95naQbLqM2PeZow3WdxwpTsLwp8B7LjPKtn7G4Vo553cocboUsrIx0j_kPrDr2yUpaD0cMGK5a63lg9IgfjR2llKkbQM8IA"
+		},
+		"Viewport": {
+			"experiences": [
+				{
+					"arcMinuteWidth": 246,
+					"arcMinuteHeight": 144,
+					"canRotate": false,
+					"canResize": false
+				}
+			],
+			"shape": "RECTANGLE",
+			"pixelWidth": 1024,
+			"pixelHeight": 600,
+			"dpi": 160,
+			"currentPixelWidth": 1024,
+			"currentPixelHeight": 600,
+			"touch": [
+				"SINGLE"
+			]
+		}
+	},
+	"request": {
+		"type": "IntentRequest",
+		"requestId": "amzn1.echo-api.request.c525610e-d2bd-4936-8372-d9adb10fcc3a",
+		"timestamp": "2019-03-02T01:48:28Z",
+		"locale": "es-MX",
+		"intent": {
+			"name": "ConvertirIntent",
+			"confirmationStatus": "NONE",
+			"slots": {
+				"divisaorigen": {
+					"name": "divisaorigen",
+					"value": "pesos",
+					"resolutions": {
+						"resolutionsPerAuthority": [
+							{
+								"authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.edda3fbe-9d45-4aa0-a82b-234c51b61ae5.divisa",
+								"status": {
+									"code": "ER_SUCCESS_MATCH"
+								},
+								"values": [
+									{
+										"value": {
+											"name": "pesos",
+											"id": "MXN"
+										}
+									}
+								]
+							}
+						]
+					},
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				},
+				"divisadestino": {
+					"name": "divisadestino",
+					"value": "dólares",
+					"resolutions": {
+						"resolutionsPerAuthority": [
+							{
+								"authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.edda3fbe-9d45-4aa0-a82b-234c51b61ae5.divisa",
+								"status": {
+									"code": "ER_SUCCESS_MATCH"
+								},
+								"values": [
+									{
+										"value": {
+											"name": "dólares",
+											"id": "USD"
+										}
+									},
+									{
+										"value": {
+											"name": "dólares hongkoneses",
+											"id": "HKD"
+										}
+									},
+									{
+										"value": {
+											"name": "dólares australianos",
+											"id": "AUD"
+										}
+									}
+								]
+							}
+						]
+					},
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				},
+				"monto": {
+					"name": "monto",
+					"value": "10",
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				}
+			}
+		},
+		"dialogState": "COMPLETED"
+	}
+}

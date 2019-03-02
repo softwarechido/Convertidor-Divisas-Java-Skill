@@ -1,0 +1,208 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "convertidor divisas",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "ConvertirIntent",
+                  "slots": [
+                      {
+                          "name": "divisaorigen",
+                          "type": "divisa",
+                          "samples": [
+                              "quiero convertir {monto} {divisaorigen} a {divisadestino}",
+                              "{divisaorigen}",
+                              "de {divisaorigen} a {divisadestino}"
+                          ]
+                      },
+                      {
+                          "name": "divisadestino",
+                          "type": "divisa",
+                          "samples": [
+                              "{divisadestino}"
+                          ]
+                      },
+                      {
+                          "name": "monto",
+                          "type": "AMAZON.NUMBER",
+                          "samples": [
+                              "{monto}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "convierteme {monto} {divisaorigen} en {divisadestino}",
+                      "quiero convertir {monto} {divisaorigen} en {divisadestino}",
+                      "selecciono convertir divisas",
+                      "selecciona convertir divisas",
+                      "ir a convertidor de divisas",
+                      "me gustaria convertir una divisa",
+                      "pretendo convertir una divisa",
+                      "quiero convertir una divisa",
+                      "convertir divisa"
+                  ]
+              }
+          ],
+          "types": [
+              {
+                  "name": "divisa",
+                  "values": [
+                      {
+                          "id": "ILS",
+                          "name": {
+                              "value": "chequéles",
+                              "synonyms": [
+                                  "chequéles israelís",
+                                  "chequéles israelíes",
+                                  "chequél israelí",
+                                  "chequél"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "LEU",
+                          "name": {
+                              "value": "leus rumanos",
+                              "synonyms": [
+                                  "leu rumano"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "HKD",
+                          "name": {
+                              "value": "dólares hongkoneses",
+                              "synonyms": [
+                                  "dólar hongkonés"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "AUD",
+                          "name": {
+                              "value": "dólares australianos",
+                              "synonyms": [
+                                  "dólar australiano"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "EUR",
+                          "name": {
+                              "value": "euros",
+                              "synonyms": [
+                                  "euro"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "MXN",
+                          "name": {
+                              "value": "pesos",
+                              "synonyms": [
+                                  "peso",
+                                  "pesos mexicanos"
+                              ]
+                          }
+                      },
+                      {
+                          "id": "USD",
+                          "name": {
+                              "value": "dólares",
+                              "synonyms": [
+                                  "dólares americanos",
+                                  "dólar",
+                                  "dólar américano"
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "ConvertirIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "divisaorigen",
+                          "type": "divisa",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.309871334557.1365770391359"
+                          }
+                      },
+                      {
+                          "name": "divisadestino",
+                          "type": "divisa",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.309871334557.560644939983"
+                          }
+                      },
+                      {
+                          "name": "monto",
+                          "type": "AMAZON.NUMBER",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.309871334557.833778856264"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.309871334557.560644939983",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "¿a qué los quieres convertir?"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.309871334557.833778856264",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "¿Cuántos {divisaorigen} quieres covnertir a {divisadestino}"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.309871334557.1365770391359",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "¿qué quieres convertir?"
+                  }
+              ]
+          }
+      ]
+  }
+}
