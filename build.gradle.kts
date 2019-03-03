@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "convertidordivisas"
-version = "1.0-kotlin"
+version = "1.0.0-kotlin"
 description = "convertidordivisas"
 
 tasks.withType<JavaCompile> {
@@ -53,4 +53,13 @@ fun KotlinCompile.configureWithJavaCompat(javaVersion: String = JavaVersion.VERS
 
     sourceCompatibility = javaVersion
     targetCompatibility = javaVersion
+}
+
+/**
+ * Configure the JAR to include dependencies and create a _fat jar_
+ */
+tasks.withType<Jar> {
+    configurations["compileClasspath"].forEach { file: File ->
+        from(zipTree(file.absoluteFile))
+    }
 }
