@@ -15,15 +15,22 @@ package convertidordivisas.handlers
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput
 import com.amazon.ask.dispatcher.request.handler.RequestHandler
-import com.amazon.ask.model.Response
-import com.amazon.ask.model.SessionEndedRequest
-import convertidordivisas.extension.isRequestType
-import java.util.*
+import convertidordivisas.data.Constants
+import convertidordivisas.dsl.response
+import convertidordivisas.extension.matchesName
+import convertidordivisas.helpers.Intents
 
-class SessionEndedRequestHandler : RequestHandler {
-    override fun canHandle(input: HandlerInput) = input.isRequestType<SessionEndedRequest>()
+class HelpIntentHandler : RequestHandler {
+    override fun canHandle(input: HandlerInput) = input matchesName Intents.Amazon.HELP_INTENT
 
-    override fun handle(input: HandlerInput): Optional<Response> {
-        return input.responseBuilder.build()
-    }
+    override fun handle(input: HandlerInput) =
+            response(from = input) {
+                speech = Constants.Speech.HELP
+                reprompt = Constants.Speech.HELP
+
+                card {
+                    title = Constants.Cards.HELP_TITLE
+                    text = Constants.Cards.HELP_TEXT
+                }
+            }
 }
