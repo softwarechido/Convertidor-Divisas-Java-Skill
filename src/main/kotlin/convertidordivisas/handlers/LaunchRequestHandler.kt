@@ -15,12 +15,24 @@ package convertidordivisas.handlers
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput
 import com.amazon.ask.dispatcher.request.handler.RequestHandler
-import com.amazon.ask.model.SessionEndedRequest
+import com.amazon.ask.model.LaunchRequest
+import convertidordivisas.data.Constants
 import convertidordivisas.dsl.response
 import convertidordivisas.extension.isRequestType
 
-class SessionEndedRequestHandler : RequestHandler {
-    override fun canHandle(input: HandlerInput) = input.isRequestType<SessionEndedRequest>()
+class LaunchRequestHandler : RequestHandler {
+    override fun canHandle(input: HandlerInput) = input.isRequestType<LaunchRequest>()
 
-    override fun handle(input: HandlerInput) = response(from = input)
+    override fun handle(input: HandlerInput) =
+            response(from = input) {
+                speech = Constants.Speech.WELCOME
+                reprompt = Constants.Speech.WELCOME
+
+                card {
+                    title = "¿Cómo te puedo ayudar?"
+                    text = "Dime convertir divisas o cancela"
+                }
+            }
+
+
 }

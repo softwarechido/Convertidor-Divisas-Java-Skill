@@ -32,20 +32,23 @@ annotation class ResponseDSL
 
 @ResponseDSL
 class ResponseBuilderDSL {
-    var speech: String = ""
-    var cardBuilderDSL: CardBuilderDSL? = null
-    var reprompt: String = ""
+    var speech: String? = null
+    var reprompt: String? = null
 
-    inline fun card(cardBlock: CardBuilderDSL.() -> Unit) {
+    private var cardBuilderDSL: CardBuilderDSL? = null
+
+    fun card(cardBlock: CardBuilderDSL.() -> Unit) {
         cardBuilderDSL = CardBuilderDSL()
         cardBuilderDSL?.cardBlock()
     }
+
+    fun card(): CardBuilderDSL? = cardBuilderDSL
 }
 
 @ResponseDSL
 class CardBuilderDSL {
-    var title: String = ""
-    var text: String = ""
+    var title: String? = null
+    var text: String? = null
 }
 
 /**
@@ -66,11 +69,12 @@ class CardBuilderDSL {
  * @param from a [HandlerInput] from which we create the response
  * @param block a function with receiver to execute as the block
  */
-inline fun response(from: HandlerInput, block: ResponseBuilderDSL.() -> Unit): Optional<Response> {
+inline fun response(from: HandlerInput, block: ResponseBuilderDSL.() -> Unit = {}): Optional<Response> {
     val responseDSL = ResponseBuilderDSL().apply(block)
+
     val responseBuilder = from.responseBuilder.withSpeech(responseDSL.speech)
 
-    responseDSL.cardBuilderDSL?.let { responseBuilder.withSimpleCard(it.title, it.text) }
+    responseDSL.card()?.let { responseBuilder.withSimpleCard(it.title, it.text) }
 
     return responseBuilder
             .withReprompt(responseDSL.reprompt)
