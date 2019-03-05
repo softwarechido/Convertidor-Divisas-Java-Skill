@@ -34,6 +34,7 @@ annotation class ResponseDSL
 class ResponseBuilderDSL {
     var speech: String? = null
     var reprompt: String? = null
+    var endSession: Boolean? = null
 
     private var cardBuilderDSL: CardBuilderDSL? = null
 
@@ -78,5 +79,6 @@ inline fun response(from: HandlerInput, block: ResponseBuilderDSL.() -> Unit = {
 
     return responseBuilder
             .withReprompt(responseDSL.reprompt)
+            .withShouldEndSession(responseDSL.endSession)
             .build()
 }

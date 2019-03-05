@@ -1,5 +1,5 @@
 /*
-     Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+     Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
      Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
      except in compliance with the License. A copy of the License is located at
@@ -15,22 +15,27 @@ package convertidordivisas.handlers
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput
 import com.amazon.ask.dispatcher.request.handler.RequestHandler
+import com.amazon.ask.model.Response
 import convertidordivisas.data.Constants
 import convertidordivisas.dsl.response
-import convertidordivisas.extension.matchesName
+import convertidordivisas.extension.StringPredicates
+import convertidordivisas.extension.get
 import convertidordivisas.helpers.Intents
+import java.util.*
 
-class HelpIntentHandler : RequestHandler {
-    override fun canHandle(input: HandlerInput) = input matchesName Intents.Amazon.HELP
+class CancelAndStopIntentHandler : RequestHandler, StringPredicates {
+    override fun canHandle(input: HandlerInput) =
+            input[Intents.Amazon.STOP orIntent Intents.Amazon.CANCEL]
 
-    override fun handle(input: HandlerInput) =
-            response(from = input) {
-                speech = Constants.Speech.HELP
-                reprompt = Constants.Speech.HELP
+    override fun handle(input: HandlerInput): Optional<Response> =
+            response(input) {
+                speech = Constants.Speech.STOP_BYE
 
                 card {
-                    title = Constants.Cards.HELP_TITLE
-                    text = Constants.Cards.HELP_TEXT
+                    title = Constants.Cards.STOP_TITLE
+                    text = Constants.Cards.STOP_TEXT
                 }
+
+                endSession = true
             }
 }

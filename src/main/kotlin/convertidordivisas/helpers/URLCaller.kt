@@ -14,7 +14,7 @@
 
 package convertidordivisas.helpers
 
-import convertidordivisas.extension.asUrl
+import convertidordivisas.extension.toUrl
 import convertidordivisas.extension.fetchData
 
 /**
@@ -23,7 +23,7 @@ import convertidordivisas.extension.fetchData
  * @param urlString the string that represents a [URL]
  */
 fun callURL(urlString: String): String = buildString {
-    urlString.asUrl().fetchData {
+    urlString.toUrl().fetchData {
         it.lineSequence().forEach { line ->
             append(line)
             append("\n")

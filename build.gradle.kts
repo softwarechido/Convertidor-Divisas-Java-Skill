@@ -59,7 +59,7 @@ fun KotlinCompile.configureWithJavaCompat(javaVersion: String = JavaVersion.VERS
  * Configure the JAR to include dependencies and create a _fat jar_
  */
 tasks.withType<Jar> {
-    configurations["compileClasspath"].forEach { file: File ->
-        from(zipTree(file.absoluteFile))
+    for (it in configurations["compileClasspath"]) {
+        from(zipTree(it.absoluteFile))
     }
 }

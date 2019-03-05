@@ -6,7 +6,7 @@ import convertidordivisas.dsl.skill
 import convertidordivisas.handlers.*
 
 class ConvertidorDivisasStreamHandler : SkillStreamHandler(skill {
-    handler { CancelandStopIntentHandler() }
+    handler { CancelAndStopIntentHandler() }
     handler { ConvertIntentHandler() }
     handler { HelpIntentHandler() }
     handler { LaunchRequestHandler() }
