@@ -1,4 +1,4 @@
-package convertidordivisas.helpers
+package convertidordivisas.data
 
 object Intents {
     object Amazon {
@@ -7,4 +7,6 @@ object Intents {
         const val STOP = "AMAZON.StopIntent"
         const val CANCEL = "AMAZON.CancelIntent"
     }
+
+    const val CONVERT = "ConvertirIntent"
 }

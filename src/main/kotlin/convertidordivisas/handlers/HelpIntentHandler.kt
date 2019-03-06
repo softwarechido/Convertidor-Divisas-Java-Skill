@@ -18,7 +18,7 @@ import com.amazon.ask.dispatcher.request.handler.RequestHandler
 import convertidordivisas.data.Constants
 import convertidordivisas.dsl.response
 import convertidordivisas.extension.matchesName
-import convertidordivisas.helpers.Intents
+import convertidordivisas.data.Intents
 
 class HelpIntentHandler : RequestHandler {
     override fun canHandle(input: HandlerInput) = input matchesName Intents.Amazon.HELP

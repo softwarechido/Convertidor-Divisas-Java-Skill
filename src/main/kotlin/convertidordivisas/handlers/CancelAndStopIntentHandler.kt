@@ -20,7 +20,7 @@ import convertidordivisas.data.Constants
 import convertidordivisas.dsl.response
 import convertidordivisas.extension.StringPredicates
 import convertidordivisas.extension.get
-import convertidordivisas.helpers.Intents
+import convertidordivisas.data.Intents
 import java.util.*
 
 class CancelAndStopIntentHandler : RequestHandler, StringPredicates {

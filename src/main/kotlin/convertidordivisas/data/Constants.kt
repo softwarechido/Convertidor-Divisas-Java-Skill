@@ -7,11 +7,15 @@ object Constants {
         const val WELCOME = "Bienvenido! Me puedes decir convertir divisas o dime cancela para terminar, ¿Cómo te puedo ayudar?"
 
         const val STOP_BYE = """Adios y <say-as interpret-as="interjection">buena suerte</say-as>."""
+
+        const val CONVERT = """<break time="1s"/> Puedes decirme Convertir divisa o cancela para salir, ¿Cómo te puedo ayudar?"""
     }
 
     object Cards {
         const val HELP_TEXT = "Ejemplo: Convierte 10 pesos en euros"
         const val HELP_TITLE = "Convertidor Divisas"
+
+        const val CONVERT_TITLE = "Convertir Divisa"
 
         const val STOP_TITLE = "Convertidor de Divisas"
         const val STOP_TEXT = "!Adios!"
