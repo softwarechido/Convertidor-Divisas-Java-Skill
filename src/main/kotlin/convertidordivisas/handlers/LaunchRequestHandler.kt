@@ -29,8 +29,8 @@ class LaunchRequestHandler : RequestHandler {
                 reprompt = Constants.Speech.WELCOME
 
                 card {
-                    title = "¿Cómo te puedo ayudar?"
-                    text = "Dime convertir divisas o cancela"
+                    title = Constants.Cards.LAUNCH_TITLE
+                    text = Constants.Cards.LAUNCH_TEXT
                 }
             }
 

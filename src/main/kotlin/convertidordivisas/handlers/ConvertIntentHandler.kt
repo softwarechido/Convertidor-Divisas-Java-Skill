@@ -8,7 +8,7 @@ import convertidordivisas.data.Constants
 import convertidordivisas.data.Intents
 import convertidordivisas.dsl.response
 import convertidordivisas.extension.*
-import convertidordivisas.helpers.ConvertidorWebService
+import convertidordivisas.helpers.exchangeCall
 import java.util.*
 
 class ConvertIntentHandler : RequestHandler {
@@ -20,35 +20,37 @@ class ConvertIntentHandler : RequestHandler {
         var speechText = Constants.Speech.CONVERT
         val cardText: String
 
-        val divisaOrig = slots["divisaorigen"]
-        val resolutionOrig = divisaOrig?.resolutions
+        val exchangeOrig = slots["divisaorigen"]
+        val resolutionOrig = exchangeOrig?.resolutions
                 ?.resolutionsPerAuthority
                 ?.first()
 
         if (resolutionOrig.isSuccessMatch) {
-            val divisaDest = slots["divisadestino"]
+            val exchangeDest = slots["divisadestino"]
 
-            val resolutionDest = divisaDest?.resolutions
+            val resolutionDest = exchangeDest?.resolutions
                     ?.resolutionsPerAuthority
                     ?.first()
 
             if (resolutionDest.isSuccessMatch) {
-                val amount = slots["monto"]
-                val quantity = amount?.toDouble()
+                val idOrig = resolutionOrig?.get(0)?.valueId ?: ""
+                val idDest = resolutionDest?.get(0)?.valueId ?: ""
 
-                val idOrig = resolutionOrig?.get(0)?.valueId
-                val idDest = resolutionDest?.get(0)?.valueId
+                val amount = slots["monto"]?.toDouble() ?: 0.0
 
-                val result = ConvertidorWebService.convertir(idOrig, idDest, quantity)
+                val result = exchangeCall(
+                        source = idOrig,
+                        dest = idDest,
+                        amount = amount)
 
-                cardText = """${amount?.value} ${divisaOrig?.value} son ${String.format("%.2f", result)} ${divisaDest?.value}"""
+                cardText = """$amount ${exchangeOrig?.value} son ${String.format("%.2f", result)} ${exchangeDest?.value}"""
                 speechText = """$cardText $speechText"""
             } else {
-                cardText = getUnknownSourceText(divisaDest)
+                cardText = getUnknownSourceText(exchangeDest)
                 speechText = """$cardText $speechText"""
             }
         } else {
-            cardText = getUnknownSourceText(divisaOrig)
+            cardText = getUnknownSourceText(exchangeOrig)
             speechText = """$cardText $speechText"""
         }
 

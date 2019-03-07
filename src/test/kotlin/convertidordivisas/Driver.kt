@@ -19,19 +19,19 @@ import convertidordivisas.helpers.ConvertidorWebService
 fun main() {
     println("Convirtiendo EUR a USD 100")
 
-    val resultado = ConvertidorWebService.convertir("EUR", "USD", 100.0)
+    val resultado = ConvertidorWebService.convert("EUR", "USD", 100.0)
     val respuesta = String.format("%.2f", resultado)
     println(resultado)
     println(respuesta)
 
     //System.out.println("Convirtiendo Origen invalido");
-    //resultado = ConvertidorWebService.convertir("XXX", "USD", 100d);
+    //resultado = ConvertidorWebService.convert("XXX", "USD", 100d);
     //respuesta = String.format("%.2f",resultado);
     //System.out.println(resultado);
     //System.out.println(respuesta);
 
     //System.out.println("Convirtiendo destino invalido");
-    //resultado = ConvertidorWebService.convertir("MXN", "XXX", 100d);
+    //resultado = ConvertidorWebService.convert("MXN", "XXX", 100d);
     //respuesta = String.format("%.2f",resultado);
     //System.out.println(resultado);
     //System.out.println(respuesta);

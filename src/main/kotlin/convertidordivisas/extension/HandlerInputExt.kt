@@ -22,9 +22,9 @@ val HandlerInput.slotsMap: Map<String, Slot>
 /**
  * Make things more readable with sentences
  */
-inline fun <reified T : Request> HandlerInput.isRequestType(): Boolean {
-    return matches(Predicates.requestType(T::class.java))
-}
+inline fun <reified T : Request> HandlerInput.isRequestType(): Boolean =
+        matches(Predicates.requestType(T::class.java))
+
 
 /**
  * Extension function to create a readable way for matching a name in string format
