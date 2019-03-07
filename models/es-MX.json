@@ -1,7 +1,7 @@
 {
   "interactionModel": {
       "languageModel": {
-          "invocationName": "convertidor divisas",
+          "invocationName": "convertidor de divisas",
           "intents": [
               {
                   "name": "AMAZON.CancelIntent",
